@@ -22,11 +22,11 @@
             min-height: 100vh;
             position: relative;
             overflow: hidden;
-            padding-top: 30px;
+            padding-top: 30px; /* Moves content slightly higher */
         }
         .content-wrapper {
             position: absolute;
-            top: 35%;
+            top: 35%; /* Moves content higher */
             left: 50%;
             transform: translate(-50%, -50%);
             width: 90%;
@@ -57,18 +57,12 @@
             flex-direction: column;
             align-items: center;
         }
-        .button-container {
-            display: flex;
-            align-items: center;
-            width: 80%;
-        }
         .button {
-            flex-grow: 1;
             text-align: center;
             padding: 10px;
             background: rgba(255, 255, 255, 0.4);
             border-radius: 5px;
-            color: #FFA500;
+            color: #FFA500; /* Orange clickable text */
             text-decoration: none;
             font-weight: bold;
             display: flex;
@@ -76,39 +70,17 @@
             justify-content: center;
             margin: 5px;
             cursor: pointer;
+            width: 80%;
         }
         .button img {
             width: 24px;
             height: 24px;
             margin-right: 10px;
         }
-        .share-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        .share-button img {
-            width: 20px;
-            height: 20px;
-        }
         .button:hover {
             background: rgba(255, 255, 255, 0.6);
         }
     </style>
-    <script>
-        function shareContent(content) {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Clinic Info',
-                    text: content,
-                    url: window.location.href
-                }).catch((error) => console.log('Error sharing', error));
-            } else {
-                alert('Sharing not supported on this browser.');
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="content-wrapper">
@@ -117,27 +89,18 @@
         <div class="section">
             <h2>📞 Contact</h2>
             <div class="buttons">
-                <div class="button-container">
-                    <a class="button" href="tel:+972509306075"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Phone_icon_black.png" alt="Phone">Phone</a>
-                    <button class="share-button" onclick="shareContent('+972509306075')"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Vertical_ellipsis.svg" alt="Share"></button>
-                </div>
-                <div class="button-container">
-                    <a class="button" href="https://www.instagram.com/dr.alex.shehady" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a>
-                    <button class="share-button" onclick="shareContent('https://www.instagram.com/dr.alex.shehady')"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Vertical_ellipsis.svg" alt="Share"></button>
-                </div>
-                <div class="button-container">
-                    <a class="button" href="https://wa.me/972509306075" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">WhatsApp</a>
-                    <button class="share-button" onclick="shareContent('https://wa.me/972509306075')"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Vertical_ellipsis.svg" alt="Share"></button>
-                </div>
+                <a class="button" href="tel:+972509306075"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Phone_icon_black.png" alt="Phone">Phone</a>
+                <a class="button" href="https://www.instagram.com/dr.alex.shehady?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a>
+                <a class="button" href="https://wa.me/972509306075" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">WhatsApp</a>
+                <a class="button" href="https://www.facebook.com/alexs.shehady" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">Facebook</a>
             </div>
         </div>
+        
         <div class="section">
             <h2>📍 Location</h2>
             <div class="buttons">
-                <div class="button-container">
-                    <a class="button" href="https://maps.app.goo.gl/aXWxJsTLHsjEivjA7" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Google_Maps_icon.png" alt="Google Maps">Google Maps</a>
-                    <button class="share-button" onclick="shareContent('https://maps.app.goo.gl/aXWxJsTLHsjEivjA7')"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Vertical_ellipsis.svg" alt="Share"></button>
-                </div>
+                <a class="button" href="https://maps.app.goo.gl/aXWxJsTLHsjEivjA7" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Google_Maps_icon.png" alt="Google Maps">Google Maps</a>
+                <a class="button" href="https://ul.waze.com/ul?place=Eh3XqNeXJyAxMTIsIEthZnIgWWFzaWYsIElzcmFlbCIuKiwKFAoSCf_ngBdkzB0VERekcrvmioBWEhQKEgmFxxdVYcwdFRFGBjPNnT5pUw&ll=32.95595500%2C35.16380700&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Waze_logo.svg" alt="Waze">Waze</a>
             </div>
         </div>
     </div>
