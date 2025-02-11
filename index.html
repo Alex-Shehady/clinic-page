@@ -9,8 +9,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://raw.githubusercontent.com/rady112/clinic-website/main/background.jpeg');
-            background-size: contain; /* Ensures the entire image is visible */
+            background-image: url('https://raw.githubusercontent.com/alex-shehady/clinic-page/main/background.jpeg');
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             background-attachment: fixed;
@@ -18,14 +18,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             min-height: 100vh;
-            padding-top: 50px; /* Adds extra spacing from the top */
+            position: relative;
+            overflow: hidden;
+        }
+        .content-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
         }
         .section {
             margin-bottom: 10px;
             padding: 10px;
-            text-align: center; /* Centering the titles */
+            text-align: center;
         }
         .section h2 {
             margin-top: 0;
@@ -45,10 +54,17 @@
             color: #FFA500; /* Orange clickable text */
             text-decoration: none;
             font-weight: bold;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 5px;
             cursor: pointer;
             width: 80%;
+        }
+        .button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
         }
         .button:hover {
             background: rgba(255, 255, 255, 0.6);
@@ -56,21 +72,23 @@
     </style>
 </head>
 <body>
-    <div class="section">
-        <h2>📞 Contact</h2>
-        <div class="buttons">
-            <a class="button" href="tel:+972509306075">Call: +972509306075</a>
-            <a class="button" href="https://www.instagram.com/dr.alex.shehady?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
-            <a class="button" href="https://wa.me/972509306075" target="_blank">WhatsApp</a>
-            <a class="button" href="https://www.facebook.com/alexs.shehady" target="_blank">Facebook</a>
+    <div class="content-wrapper">
+        <div class="section">
+            <h2>📞 Contact</h2>
+            <div class="buttons">
+                <a class="button" href="tel:+972509306075"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Phone_icon.png" alt="Phone">Phone</a>
+                <a class="button" href="https://www.instagram.com/dr.alex.shehady?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a>
+                <a class="button" href="https://wa.me/972509306075" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">WhatsApp</a>
+                <a class="button" href="https://www.facebook.com/alexs.shehady" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Facebook_Logo_2023.png" alt="Facebook">Facebook</a>
+            </div>
         </div>
-    </div>
-    
-    <div class="section">
-        <h2>📍 Location</h2>
-        <div class="buttons">
-            <a class="button" href="https://maps.app.goo.gl/aXWxJsTLHsjEivjA7" target="_blank">Google Maps</a>
-            <a class="button" href="https://ul.waze.com/ul?place=Eh3XqNeXJyAxMTIsIEthZnIgWWFzaWYsIElzcmFlbCIuKiwKFAoSCf_ngBdkzB0VERekcrvmioBWEhQKEgmFxxdVYcwdFRFGBjPNnT5pUw&ll=32.95595500%2C35.16380700&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">Waze</a>
+        
+        <div class="section">
+            <h2>📍 Location</h2>
+            <div class="buttons">
+                <a class="button" href="https://maps.app.goo.gl/aXWxJsTLHsjEivjA7" target="_blank">Google Maps</a>
+                <a class="button" href="https://ul.waze.com/ul?place=Eh3XqNeXJyAxMTIsIEthZnIgWWFzaWYsIElzcmFlbCIuKiwKFAoSCf_ngBdkzB0VERekcrvmioBWEhQKEgmFxxdVYcwdFRFGBjPNnT5pUw&ll=32.95595500%2C35.16380700&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">Waze</a>
+            </div>
         </div>
     </div>
 </body>
